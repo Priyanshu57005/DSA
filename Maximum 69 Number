@@ -1,0 +1,30 @@
+class Solution {
+public:
+    int maximum69Number (int num) {
+        // int original = num;
+        // int divisor = 1;
+        // int max_num = num;
+
+        // while(divisor<=num)
+        // {
+        //     int digit = (num/divisor) % 10;
+        //     if (digit == 6) {
+        //     max_num = max(max_num, original + 3 * divisor); 
+        // }
+        // divisor *= 10;
+        // }
+        // return max_num;
+
+
+        string number = to_string(num);
+        for(int i=0; i<number.length(); i++)
+        {
+            if(number[i] == '6')
+            {
+                number[i] = '9';
+                return stoi(number);
+            }
+        }
+        return num;
+    }
+};
