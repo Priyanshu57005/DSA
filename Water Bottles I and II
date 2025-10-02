@@ -1,0 +1,33 @@
+class Solution {
+public:
+    int numWaterBottles(int numBottles, int numExchange) {
+        int consumed = 0;
+        while(numBottles >= numExchange){
+            consumed += numExchange;
+            numBottles -= numExchange;
+
+            numBottles += 1;
+        }
+        return consumed + numBottles;
+    }
+};
+
+
+Water Bottle II
+
+class Solution {
+public:
+    int maxBottlesDrunk(int numBottles, int numExchange) {
+        int consumed = numBottles;
+        while(numBottles >= numExchange){
+            
+            numBottles -= numExchange;
+
+            numExchange += 1;
+            consumed += 1;
+            numBottles += 1;
+
+        }
+        return consumed;
+    }
+};
